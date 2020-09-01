@@ -1,4 +1,4 @@
-FROM gcc:10.1.0
+FROM gcc:10.2.0
 
 ARG APP_UID=2000
 
@@ -9,6 +9,8 @@ MAINTAINER TANGO Controls team <tango@esrf.fr>
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y \
+  abi-compliance-checker                 \
+  abi-dumper                             \
   apt-utils                              \
   build-essential                        \
   cmake                                  \
